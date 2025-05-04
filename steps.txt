@@ -1,0 +1,81 @@
+1. Create a new virtual environment
+    
+    python -m venv env
+
+2. Activate a virtual environment
+
+    source env/Scripts/activate
+
+3. Deactivate a virtual environment
+
+    deactivate
+
+4. 
+
+    pip freeze
+
+5. 
+
+    pip install django==3.1
+
+6. 
+
+    django-admin startproject greatkart .
+
+7. 
+
+    python manage.py runserver
+
+8. 
+
+    python manage.py collectstatic
+
+9. 
+
+    python manage.py startapp category
+
+10. 
+
+    pip install pillow
+
+11. 
+
+    python manage.py makemigrations
+
+12. 
+
+    python manage.py migrate
+
+13. 
+
+    python manage.py createsuperuser
+    or
+    winpty python manage.py createsuperuser
+
+14. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

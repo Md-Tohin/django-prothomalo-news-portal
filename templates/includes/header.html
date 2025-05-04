@@ -1,0 +1,177 @@
+{% load static %}
+
+<!--
+/*#####################
+-----------STARTING NAVBAR PART--------------
+#####################*/
+-->
+<header class="cd-main-header">
+    <a class="cd-logo" href="#0"><img src="{% static 'img/Prothom-Alo.png' %}" alt="Logo"></a>
+    <ul class="cd-header-buttons">
+        <li><a class="cd-search-trigger" href="#cd-search"><span></span></a></li>
+        <li><a class="cd-nav-trigger" href="#cd-primary-nav"><span></span></a></li>
+    </ul>
+    <!-- cd-header-buttons -->
+</header>
+<div class="cd-overlay"></div>
+
+<nav class="cd-nav">
+    <ul id="cd-primary-nav" class="cd-primary-nav is-fixed">
+        <li><a href="articel-page.html">বাংলাদেশ</a></li>
+        <li><a href="#">আন্তর্জাতিক</a></li>
+        <li><a href="#">অর্থনীতি</a></li>
+        <li><a href="#">মতামত</a></li>
+        <li><a href="#">খেলা</a></li>
+        <li><a href="#">বিনোদন</a></li>
+        <li><a href="#">ফিচার</a></li>
+        <li><a href="#">জীবনযাপন</a></li>
+        <li><a href="#">ছবি</a></li>
+        <li><a href="#">ভিডিও</a></li>
+        <li><a href="#">উত্তর আমেরিকা</a></li>
+        <li class="has-children"> <a href="#"><i class="fa fa-bars" aria-hidden="true"></i> সব </a>
+            <ul class="cd-secondary-nav is-hidden">
+                <li class="has-children">
+                    <ul class="is-hidden">
+                        <li class="go-back">
+                            <a href="#0"></a>
+                        </li>
+                        <li class="see-all">
+                            <a href="#"></a>
+                        </li>
+                        <li><a href="#">প্রচ্ছদ</a></li>
+                        <li><a href="#">খেলা</a></li>
+                        <li><a href="#">জীবনযাপন</a></li>
+                        <li><a href="#">বিশেষ সংখ্যা</a></li>
+                    </ul>
+                </li>
+                <li class="has-children">
+                    <ul class="is-hidden">
+                        <li><a href="#">বাংলাদেশ</a></li>
+                        <li><a href="#0">বিনোদন</a></li>
+                        <li><a href="#0">শিক্ষা</a></li>
+                        <li><a href="#0">উত্তর আমেরিকা</a></li>
+                    </ul>
+                </li>
+                <li class="has-children">
+                    <ul class="is-hidden">
+                        <li><a href="#">আন্তর্জাতিক</a></li>
+                        <li><a href="#">কার্টুন</a></li>
+                        <li><a href="#">শিল্প ও সাহিত্য</a></li>
+                    </ul>
+                </li>
+                <li class="has-children">
+                    <ul class="is-hidden">
+                        <li class="go-back">
+                            <a href="#0"></a>
+                        </li>
+                        <li class="see-all">
+                            <a href="#"> </a>
+                        </li>
+                        <li><a href="#">অর্থনীতি</a></li>
+                        <li><a href="#">ফিচার</a></li>
+                        <li><a href="#">আমরা</a></li>
+                    </ul>
+                </li>
+                <li class="has-children">
+                    <ul class="is-hidden">
+                        <li class="go-back">
+                            <a href="#0"></a>
+                        </li>
+                        <li class="see-all">
+                            <a href="#"> </a>
+                        </li>
+                        <li><a href="#">মতামত</a></li>
+                        <li><a href="#">বিজ্ঞান ও প্রযুক্তি</a></li>
+                        <li><a href="#">পাঁচমিশালি</a></li>
+                    </ul>
+                <li class="has-children">
+                    <ul class="is-hidden">
+                        <li class="go-back">
+                            <a href="#0"></a>
+                        </li>
+                        <li class="see-all">
+                            <a href="#"> </a>
+                        </li>
+                        <li><a href="#">ই-পেপার</a></li>
+                        <li><a href="#">বিজ্ঞাপন</a></li>
+                        <li><a href="#">সার্কুলেশন</a></li>
+                        <li><a href="#">পবিত্র হজ</a></li>
+                        <li><a href="#">দূর পরবাস</a></li>
+                    </ul>
+                </li>
+        </li>
+        <li class="has-children">
+            <ul class="is-hidden">
+                <li class="go-back">
+                    <a href="#0"></a>
+                </li>
+                <li class="see-all">
+                    <a href="#"></a>
+                </li>
+                <li><a href="#"><i class="fa fa-camera picture8378" aria-hidden="true"></i> <span
+                            class="pic8448-details88">ছবি</span></a></li>
+                <li><a href="#"><i class="fa fa-video-camera camera885" aria-hidden="true"></i> <span
+                            class="pic8448-details88">ভিডিও</span></a></li>
+                <li><a href="#"><i class="fa fa-file-archive-o archive747" aria-hidden="true"></i> <span
+                            class="pic8448-details88">আর্কাইভ</span></a></li>
+            </ul>
+        </li>
+        <li class="has-children">
+            <ul class="is-hidden">
+                <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i><span
+                            class="pic8448-details88">2221</span></a></li>
+            </ul>
+        </li>
+        <li class="has-children">
+            <ul class="is-hidden">
+                <li><a href="#"><i class="fa fa-handshake-o" aria-hidden="true"></i> <span
+                            class="pic8448-details88">ট্রাস্ট</span></a></li>
+            </ul>
+        </li>
+        <li class="has-children">
+            <ul class="is-hidden">
+                <li><a href="#"><i class="fa fa-ravelry" aria-hidden="true"></i> <span
+                            class="pic8448-details88">প্রতিচিন্তা</span></a></li>
+            </ul>
+        </li>
+        <li class="has-children">
+            <ul class="is-hidden">
+                <li><a href="#"><i class="fa fa-briefcase" aria-hidden="true"></i> <span
+                            class="pic8448-details88">চাকরি ডটকম</span></a></li>
+            </ul>
+        </li>
+        <li class="has-children">
+            <ul class="is-hidden">
+                <li><a href="#"><i class="fa fa-microphone" aria-hidden="true"></i> <span
+                            class="pic8448-details88">abc রেডিও</span></a></li>
+            </ul>
+        </li>
+        <li class="has-children">
+            <ul class="is-hidden">
+                <li class="bondusoba8380">
+                    <a href="#"><img src="{% static 'img/590679d8369d61d451b1076ef176926d-593e579b0f1b3.png' %}"
+                            alt="image" /></a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    </li>
+    <li class="line38">|</li>
+    <li><a href="#">English</a></li>
+    <li><a href="#"><i class="fa fa-user-circle-o" aria-hidden="true"></i></a></li>
+    <li><a href="#"><i class="fa fa-hand-o-right" aria-hidden="true"></i></a></li>
+    </ul>
+    <!-- primary-nav -->
+</nav>
+<!-- cd-nav -->
+<!--#####################
+-----------END NAVBAR PART--------------
+#####################-->
+<!--#####################
+-----------STARTING HAEDER ADS--------------
+#####################-->
+<div id="cd-search" class="cd-search">
+    <form>
+        <input type="search" placeholder="Search...">
+    </form>
+</div>

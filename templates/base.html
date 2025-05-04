@@ -1,0 +1,38 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en" class="no-js">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>prothom Alo | Largest Online News</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <!-- CSS reset -->
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <!-- CSS reset -->
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+    <!-- CSS reset -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- Resource style -->
+    <script src="{% static 'js/modernizr.js' %}"></script>
+    <!-- Modernizr -->
+    <link href="https://fonts.maateen.me/solaiman-lipi/font.css" rel="stylesheet">
+
+</head>
+
+<body>
+    
+    <!-- header -->
+    {% include 'includes/header.html' %}
+
+    {% block content %}
+    <!-- content -->
+    {% endblock %}
+
+    <!-- footer -->
+    {% include 'includes/footer.html' %}
+
+</body>
+
+</html>
