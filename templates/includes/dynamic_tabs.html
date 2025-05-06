@@ -1,0 +1,52 @@
+<div class="picture-part-hedaing"> <a href="#">
+        <h3>সবচেয়ে</h3>
+    </a> </div>
+<div class="container newstab748">
+    <ul class="tabs">
+        <li class="tab-link current" data-tab="tab-1">শেষ</li>
+        <li class="tab-link" data-tab="tab-2">পঠিত</li>
+        <li class="tab-link" data-tab="tab-3">আলোচিত</li>
+        <li class="tab-link" data-tab="tab-4">নির্বাচিত</li>
+    </ul>
+    <div id="tab-1" class="tab-content current">
+        {% for news in latest_4_news %}
+            <a href="{{ news.get_url }}">
+                <p class="line-clamp-1">{{ news.news_title }}</p>
+            </a>
+            {% if not forloop.last %}
+                <hr>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <div id="tab-2" class="tab-content">
+        {% for news in is_read_4_news %}
+        <a href="{{ news.get_url }}">
+            <p class="line-clamp-1">{{ news.news_title }}</p>
+        </a>
+            {% if not forloop.last %}
+                <hr>
+            {% endif %}
+        {% endfor %}       
+    </div> 
+    <div id="tab-3" class="tab-content">
+        {% for news in is_discussed_4_news %}
+        <a href="{{ news.get_url }}">
+            <p class="line-clamp-1">{{ news.news_title }}</p>
+        </a>
+        {% if not forloop.last %}
+                <hr>
+            {% endif %}
+        {% endfor %}     
+    </div>
+    <div id="tab-4" class="tab-content">
+        {% for news in is_selected_4_news %}
+        <a href="{{ news.get_url }}">
+            <p class="line-clamp-1">{{ news.news_title }}</p>
+        </a>
+            {% if not forloop.last %}
+                <hr>
+            {% endif %}
+        {% endfor %}     
+    </div>
+</div>
+<!-- container -->

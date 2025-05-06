@@ -1,0 +1,163 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load bangla_date %}
+
+{% block content %}
+
+
+<main class="cd-main-content">
+    <div class="container">
+        <div class="ads-details">
+
+        </div>
+    </div>
+</main>
+
+<section class="picture_part28930">
+    <div class="container">
+        <div class="row">
+            <div class="single-image-gallery829">
+                <div class="col-md-8">
+                    <div class="picture-part-hedaing"> <a href="{{ category_name.get_url }}">
+                            <h3> {% if category_name %} {{ category_name }} {% else %} সর্বশেষ {% endif %}</h3>
+                        </a>
+                    </div>
+                    {% if not news %}
+                    <div style="background: #fff; height: 25rem; display: flex; justify-content: center; align-items: center; flex-direction: column;">
+                        <div>
+                            <div class="YleFh" style="align-items: center; display: flex; justify-content: center;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="58" height="132">
+                                    <text data-name="4" transform="translate(0 105)" fill="#555" font-size="100" font-family="Roboto-Bold,Roboto" font-weight="700">
+                                    <tspan x="0" y="0">5</tspan></text>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="104.522" height="97.712" class="not-found-icon">
+                                    <g id="Group_4676" data-name="Group 4676" transform="translate(-572 -249.355)">
+                                        <g id="Group_4668" data-name="Group 4668" transform="translate(572 249.355)">
+                                            <path id="Path_512"
+                                                d="M419.5 818.386a37.144 37.144 0 10-37.136-37.133 37.145 37.145 0 0037.136 37.133z"
+                                                fill="#ee4023" data-name="Path 512" transform="translate(-367.515 -720.674)"></path>
+                                            <g id="Group_4663" data-name="Group 4663" transform="translate(50.089)">
+                                                <path id="Rectangle_1453" d="M0 0h3.782v18.481H0z" fill="#ee4023"
+                                                    data-name="Rectangle 1453" transform="rotate(-.065 3.526 .002)"></path>
+                                            </g>
+                                            <g id="Group_4664" data-name="Group 4664" transform="translate(71.56 6.955)">
+                                                <path id="Rectangle_1454" d="M0 0h18.598v3.783H0z" fill="#ee4023"
+                                                    data-name="Rectangle 1454" transform="rotate(-60.954 13.814 8.13)"></path>
+                                            </g>
+                                            <g id="Group_4665" data-name="Group 4665" transform="translate(86.803 28.169)">
+                                                <path id="Rectangle_1455" d="M0 0h18.479v3.784H0z" fill="#ee4023"
+                                                    data-name="Rectangle 1455" transform="rotate(-31.57 17.124 4.837)"></path>
+                                            </g>
+                                            <g id="Group_4666" data-name="Group 4666" transform="translate(20.656 6.818)">
+                                                <path id="Rectangle_1456" d="M0 0h3.784v18.426H0z" fill="#ee4023"
+                                                    data-name="Rectangle 1456" transform="rotate(-29.2 3.543 .922)"></path>
+                                            </g>
+                                            <g id="Group_4667" data-name="Group 4667" transform="translate(0 27.974)">
+                                                <path id="Rectangle_1457" d="M0 0h3.783v18.35H0z" fill="#ee4023"
+                                                    data-name="Rectangle 1457" transform="rotate(-59.23 2.859 1.625)"></path>
+                                            </g>
+                                        </g>
+                                        <path id="Path_521"
+                                            d="M10.874 0c6.005 0 10.874 4.278 10.874 9.556.079-.081-21.7.027-21.747 0C0 4.278 4.868 0 10.874 0z"
+                                            fill="#ececec" data-name="Path 521" transform="translate(613 317.819)"></path>
+                                        <g id="Group_4677" data-name="Group 4677" transform="translate(0 4)">
+                                            <circle id="Ellipse_131" cx="4" cy="4" r="4" fill="#ececec" data-name="Ellipse 131"
+                                                transform="translate(604 292.035)"></circle>
+                                            <circle id="Ellipse_132" cx="4" cy="4" r="4" fill="#ececec" data-name="Ellipse 132"
+                                                transform="translate(636 292.035)"></circle>
+                                        </g>
+                                    </g>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="58" height="132">
+                                    <text data-name="4" transform="translate(0 105)" fill="#555" font-size="100" font-family="Roboto-Bold,Roboto" font-weight="700">
+                                        <tspan x="0" y="0">0</tspan>
+                                    </text>
+                                </svg>
+                            
+                            </div>
+                            <h1 class="text-center" style="font-size: 3rem; font-weight: bold;" >কিছু পাওয়া যায়নি</h1>
+                        </div>
+                    </div>
+                    {% endif %}
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner">
+                            {% for news in latest_5_news %}
+                                <div class="item {% if forloop.first %}active{% endif %}"> <img style="height: 265px; width: 100%;" src="{{ news.images.url }}">
+                                    <div class="carousel-caption picture-captio8238">
+                                        
+                                        <a href="#">
+                                            <p> </p>
+                                        </a>
+                                        <p class="line-clamp-2">{{ news.news_title }} </p>
+                                        <h4><a href="#" target="_blank" class="font-white">এক ঝলক ({{ news.created_at|bangla_date }})</a></h4>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                            <!-- End Item -->
+                            
+                        </div>
+                        <!-- End Carousel Inner -->
+                        <ul class="list-group col-sm-4">
+                            {% for news in latest_5_news %}
+                                <li data-target="#myCarousel" data-slide-to="{{ forloop.counter0 }}" class="list-group-item {% if forloop.first %}active{% endif %}">
+                                    <h4 class="line-clamp-2">{{ news.news_title }}</h4>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                        <!-- Controls -->
+                        <div class="carousel-controls">
+                            <a class="left carousel-control" href="#myCarousel" data-slide="prev"> <span
+                                    class="glyphicon glyphicon-chevron-left"></span> </a>
+                            <a class="right carousel-control" href="#myCarousel" data-slide="next"> <span
+                                    class="glyphicon glyphicon-chevron-right"></span> </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Carousel -->
+                <div class="col-md-4">
+                    {% include '../includes/dynamic_tabs.html' %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    {% if news %}
+        <section class="newsBlog_one">
+            <div class="container">
+                <div class="row">
+                    <div class="home-conatent239">
+                    
+                            {% for single_news in news %}
+                            <div class="col-md-3">
+                                <div class="home-post-volume72378">
+                                    <a href="{{ single_news.get_url }}"><img src="{{ single_news.thumbnail.url }}" alt="image"></a>
+                                    <div class="home-post-details"> <a href="#">
+                                            <h2 class="line-clamp-2">{{ single_news.news_title }}</h2>
+                                        </a>
+
+                                        <a href="#">
+                                            <p class="line-clamp-4">{{ single_news.short_description }}....</p>
+                                        </a> 
+
+                                        <a href="#">
+                                            <h6> 
+                                                {% if category_name %} {{ single_news.created_at|bangla_date }} {% else %} {{ single_news.category }} {% endif %}
+                                                
+                                            </h6>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                            <a href="#">
+                                <button type="button" class="home-readmore8329">আরও</button>
+                            </a>                
+                    </div>
+                </div>
+            </div>
+        </section>
+     {% endif %}
+{% endblock %}

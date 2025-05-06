@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'category',
     'accounts',
+    'news',
 ]
 
 MIDDLEWARE = [
@@ -64,6 +65,11 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'category.context_processors.menu_links',
+                'news.context_processors.latest_4_news',
+                'news.context_processors.is_read_4_news',
+                'news.context_processors.is_discussed_4_news',
+                'news.context_processors.is_selected_4_news',
             ],
         },
     },

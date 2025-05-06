@@ -7,11 +7,13 @@
 <!--#####################
 -----------part One--------------
 #####################-->
+
 <main class="cd-main-content">
     <div class="container">
         <div class="ads-details"> </div>
     </div>
 </main>
+
 <section class="newsBlog_one">
     <div class="container">
         <div class="row">
@@ -29,159 +31,62 @@
                 <hr>
             </div>
             <div id="top-post-wrapper23190">
-                <div class="home-page-top-post838">
-                    <div class="col-md-5">
-                        <div class="intro_post3993-img">
-                            <a href="#"><img
-                                    src="{% static 'img/b1cc612b1bac13f867c4e67e62c3394c-593622c3e0838.jpg' %}"
-                                    alt="Image"></a>
-                            <div class="intro_post3993-overlay"> <a href="#">
-                                    <h1>ফিঙ্গার প্রিন্ট স্ক্যানার এখন ডালভাত!</h1>
-                                </a> </div>
+                {% if is_latest_top_2_news|length > 0 %}
+                    {% with news=is_latest_top_2_news.0 %}
+                    <div class="home-page-top-post838">
+                        <div class="col-md-5">
+                            <div class="intro_post3993-img">
+                                <a href="{{ news.get_url }}"><img
+                                        src="{{ news.images.url }}"
+                                        alt="Image"></a>
+                                <div class="intro_post3993-overlay"> <a href="{{ news.get_url }}">
+                                    <h1>{{ news.news_title }}</h1>
+                                    </a> </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="intro_middle-post398-img">
-                        <a href="#"><img src="{% static 'img/khela.jpg' %}" alt="image"></a>
-                        <div class="intro_middle-post398-overlay"> <a href="#">
-                                <h1>অনেক প্রথম যোগ করেও অতৃপ্তির তৃষ্ণা</h1>
-                            </a> </div>
-                    </div>
-                </div>
+                    {% endwith %}
+                {% endif %}
+                {% if is_latest_top_2_news|length > 1 %}
+                    {% with news=is_latest_top_2_news.1 %}
+                        <div class="col-md-3">
+                            <div class="intro_middle-post398-img">
+                                <a href="{{ news.get_url }}"><img src="{{ news.thumbnail.url }}" alt="image"></a>
+                                <div class="intro_middle-post398-overlay"> 
+                                    <a href="{{ news.get_url }}">
+                                        <h1 style="font-size: 1.4rem; height: 150px; overflow: hidden;">{{ news.news_title }}</h1>
+                                    </a> </div>
+                            </div>
+                        </div>
+                    {% endwith %}
+                {% endif %}               
+                
                 <div class="col-md-4">
                     <div class="intro-ads-side8219">
-                        <a href="#"><img src="{% static 'img/ads.jpg' %}" alt="Image"></a>
+                        <a href="javascript:void(0);"><img src="{% static 'img/ads.jpg' %}" alt="Image"></a>
                     </div>
                 </div>
             </div>
             <div class="home-conatent239">
+                {% for news in latest_news %}
                 <div class="col-md-3">
                     <div class="home-post-volume72378">
-                        <a href="#"><img src="{% static 'img/google.png' %}" alt="image"></a>
-                        <div class="home-post-details"> <a href="#">
-                                <h2>গুগলের কাছে বাংলাদেশ সরকারের তথ্য চাওয়ার হার বাড়ছে।</h2>
+                        <a href="{{ news.get_url }}"><img src="{{ news.thumbnail.url }}" alt="image"></a>
+                        <div class="home-post-details"> <a href="{{ news.get_url }}">
+                                <h2 class="line-clamp-2">{{ news.news_title }}</h2>
                             </a>
-                            <a href="#">
-                                <p>গুগলের কাছে বাংলাদেশ সরকারের তথ্য চাওয়ার হার বাড়ছে। বাংলাদেশের সরকারের কাছ থেকে
-                                    করা অনুরোধে আবারও সাড়া দিয়েছে গুগল।....</p>
-                            </a> <a href="#">
-                                <h6> বিজ্ঞান ও প্রযুক্তি</h6>
+                            <a href="{{ news.get_url }}">
+                                <p class="line-clamp-4">{{ news.short_description }}....</p>
+                            </a> <a href="{{ news.category.get_url }}">
+                                <h6> {{ news.category }}</h6>
                             </a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="home-post-volume72378">
-                        <a href="#"><img src="{% static 'img/khela1.jpg' %}" alt="image"></a>
-                        <div class="home-post-details"> <a href="#">
-                                <h2>
-                                    টস জিতে ফিল্ডিং নেওয়া ভালো মনে হচ্ছে মুমিনুলের</h2>
-                            </a>
-                            <a href="#">
-                                <p>গুগলের কাছে বাংলাদেশ সরকারের তথ্য চাওয়ার হার বাড়ছে। পচেফস্ট্রুমের ন্যাড়া উইকেটে
-                                    টস জিতে বাংলাদেশের ফিল্ডিং ....</p>
-                            </a> <a href="#">
-                                <h6> খেলা</h6>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="home-post-volume72378">
-                        <a href="#"><img src="{% static 'img/inte.jpg' %}" alt="image"></a>
-                        <div class="home-post-details"> <a href="#">
-                                <h2>যুক্তরাজ্যের নির্বাচনের ফল নির্ধারক অশ্বেতাঙ্গরা!।</h2>
-                            </a>
-                            <a href="#">
-                                <p> যুক্তরাজ্যের জাতীয় নির্বাচনের অন্যতম ফলাফল নির্ধারক হিসেবে আবির্ভূত হয়েছেন
-                                    অশ্বেতাঙ্গ ভোটাররা (কালো ও সংখ্যালঘু জাতিগোষ্ঠী বা বিএমই)। ২০১৬ সালে
-                                    অনুষ্ঠিত... </p>
-                            </a> <a href="#">
-                                <h6>আন্তর্জাতিক</h6>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="home-post-volume72378">
-                        <a href="#"><img src="{% static 'img/razzak.jpg' %}" alt="image"></a>
-                        <div class="home-post-details"> <a href="#">
-                                <h2>রাজ্জাকের বাড়ির নামফলক চুরি।</h2>
-                            </a>
-                            <a href="#">
-                                <p>ঢাকার গুলশান ২ এলাকার ৩৬ নম্বর রোডে যে-কেউ ঢুকলেই ‘লক্ষী কুঞ্জ’ নামটি দেখে বুঝতে
-                                    পারতেন এটি নায়করাজ রাজ্জাকের বাড়ি।....</p>
-                            </a> <a href="#">
-                                <h6> বিনোদন</h6>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="home-post-volume72378">
-                        <a href="#"><img src="{% static 'img/razzak.jpg' %}" alt="image"></a>
-                        <div class="home-post-details"> <a href="#">
-                                <h2>রাজ্জাকের বাড়ির নামফলক চুরি।</h2>
-                            </a>
-                            <a href="#">
-                                <p>ঢাকার গুলশান ২ এলাকার ৩৬ নম্বর রোডে যে-কেউ ঢুকলেই ‘লক্ষী কুঞ্জ’ নামটি দেখে বুঝতে
-                                    পারতেন এটি নায়করাজ রাজ্জাকের বাড়ি।....</p>
-                            </a> <a href="#">
-                                <h6> বিনোদন</h6>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="home-post-volume72378">
-                        <a href="#"><img src="{% static 'img/inte.jpg' %}" alt="image"></a>
-                        <div class="home-post-details"> <a href="#">
-                                <h2>যুক্তরাজ্যের নির্বাচনের ফল নির্ধারক অশ্বেতাঙ্গরা!।</h2>
-                            </a>
-                            <a href="#">
-                                <p> যুক্তরাজ্যের জাতীয় নির্বাচনের অন্যতম ফলাফল নির্ধারক হিসেবে আবির্ভূত হয়েছেন
-                                    অশ্বেতাঙ্গ ভোটাররা (কালো ও সংখ্যালঘু জাতিগোষ্ঠী বা বিএমই)। ২০১৬ সালে অনুষ্ঠিত
-                                    ... </p>
-                            </a> <a href="#">
-                                <h6>আন্তর্জাতিক</h6>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="home-post-volume72378">
-                        <a href="#"><img src="{% static 'img/khela1.jpg' %}" alt="image"></a>
-                        <div class="home-post-details"> <a href="#">
-                                <h2>
-                                    টস জিতে ফিল্ডিং নেওয়া ভালো মনে হচ্ছে মুমিনুলের</h2>
-                            </a>
-                            <a href="#">
-                                <p>গুগলের কাছে বাংলাদেশ সরকারের তথ্য চাওয়ার হার বাড়ছে।পচেফস্ট্রুমের ন্যাড়া উইকেটে টস
-                                    জিতে বাংলাদেশের ফিল্ডিং নেওয়ার ....</p>
-                            </a> <a href="#">
-                                <h6> খেলা</h6>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="home-post-volume72378">
-                        <a href="#"><img src="{% static 'img/google.png' %}" alt="image"></a>
-                        <div class="home-post-details"> <a href="#">
-                                <h2>গুগলের কাছে বাংলাদেশ সরকারের তথ্য চাওয়ার ।</h2>
-                            </a>
-                            <a href="#">
-                                <p>গুগলের কাছে বাংলাদেশ সরকারের তথ্য চাওয়ার হার বাড়ছে। বাংলাদেশের সরকারের কাছ থেকে
-                                    করা অনুরোধে আবারও সাড়া দিয়েছে গুগল।....</p>
-                            </a> <a href="#">
-                                <h6> বিজ্ঞান ও প্রযুক্তি</h6>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
+                
             </div>
-            <a href="#">
+            <a href="javascrtpt:void(0);">
                 <button type="button" class="home-readmore8329">আরও</button>
             </a>
         </div>
@@ -199,7 +104,7 @@
 
 <section class="ads-parst7382 text-center">
     <div class="container">
-        <a href="#"><img src="{% static 'img/2nd%20ads.gif' %}" alt="image"></a>
+        <a href="javascript:void(0);"><img src="{% static 'img/2nd%20ads.gif' %}" alt="image"></a>
     </div>
 </section>
 
@@ -217,182 +122,28 @@
         <div class="row">
             <div class="single-image-gallery829">
                 <div class="col-md-8">
-                    <div class="picture-part-hedaing"> <a href="#">
+                    <div class="picture-part-hedaing"> <a href="javascript:void(0)">
                             <h3> ছবি</h3>
-                        </a></div>
-                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                        <!-- Wrapper for slides -->
-                        <div class="carousel-inner">
-                            <div class="item active"> <img src="http://placehold.it/760x400/cccccc/ffffff">
-                                <div class="carousel-caption picture-captio8238">
-                                    <h4><a href="#" target="_blank">এক ঝলক (১ অক্টোবর ২০১৭)</a></h4>
-                                    <a href="#">
-                                        <p> শিশুরা শিউলি ফুল কুড়াচ্ছে</p>
+                        </a> </div>
+                    <div class="imagec-content8293">
+                        {% for news in is_image_4_news %}
+                        <div class="col-md-3">
+                            <div class="single-cinten-detail24">
+                                <a href="{{ news.get_url }}"><img src="{{ news.thumbnail.url }}" alt="Image"></a>
+                                <div class="singla-image-info290">
+                                    <a href="{{ news.get_url }}">
+                                        <p class="line-clamp-2" style="font-size: 1.3rem; line-height: 2rem;">{{ news.news_title }}</p>
                                     </a>
-                                    <p>৩০ সেপ্টেম্বর, রায়গঞ্জের রণতিথা, সিরাজগঞ্জ। </p>
-                                    <p>ছবি: সাজেদুল আলম</p>
+                                    <a href="{{ news.category.get_url }}"><h6>{{ news.category }}</h6></a>
                                 </div>
                             </div>
-                            <!-- End Item -->
-                            <div class="item"> <img src="http://placehold.it/760x400/999999/cccccc">
-                                <div class="carousel-caption picture-captio8238">
-                                    <h4><a href="#">এক ঝলক (১ অক্টোবর ২০১৭)</a></h4>
-                                    <a href="#">
-                                        <p>৪৯ তম নিবেলহর্ন ট্রফি ফিগার স্কেটিং প্রতিযোগিতায় দুই সুইডিশ প্রতিযোগী।
-                                        </p>
-                                    </a>
-                                    <p>৩০ সেপ্টেম্বর, ওবার্স্টডর্ফ, জার্মানি</p>
-                                    <p>ছবি: এএফপি</p>
-                                </div>
-                            </div>
-                            <!-- End Item -->
-                            <div class="item"> <img src="http://placehold.it/760x400/dddddd/333333">
-                                <div class="carousel-caption picture-captio8238">
-                                    <h4><a href="#">এক ঝলক (২৫ সেপ্টেম্বর ২০১৭)</a></h4>
-                                    <a href="#">
-                                        <p>স্বস্তির আশায় ঘর থেকে বেরিয়ে বোনকে কাঁধে নিয়ে হেঁটে বেড়ায় ভাই</p>
-                                    </a>
-                                    <p>২৫ সেপ্টেম্বর ২০১৭,টেকনাফের</p>
-                                    <p>ছবি: গিয়াস উদ্দিন</p>
-                                </div>
-                            </div>
-                            <!-- End Item -->
-                            <div class="item"> <img src="http://placehold.it/760x400/999999/cccccc">
-                                <div class="carousel-caption picture-captio8238">
-                                    <h4><a href="#">এক ঝলক (২৫ সেপ্টেম্বর ২০১৭)</a></h4>
-                                    <a href="#">
-                                        <p>বিদ্যুতের মূল্যবৃদ্ধির প্রস্তাবের বিরোধিতা করে সোমবার </p>
-                                    </a>
-                                    <p>২৫ সেপ্টেম্বর ২০১৭,টিসিবি </p>
-                                    <p>ছবি: আবদুস সালাম</p>
-                                </div>
-                            </div>
-                            <!-- End Item -->
-                            <div class="item"> <img src="http://placehold.it/760x400/dddddd/333333">
-                                <div class="carousel-caption picture-captio8238">
-                                    <h4><a href="#">এক ঝলক (২৬ সেপ্টেম্বর ২০১৭)</a></h4>
-                                    <a href="#">
-                                        <p>দলবেঁধে সমুদ্রে সাম্পান নামাচ্ছেন জেলেরা।</p>
-                                    </a>
-                                    <p>(২৬ সেপ্টেম্বর ২০১৭),বগুড়া</p>
-                                    <p>ছবি: সোয়েল রানা</p>
-                                </div>
-                            </div>
-                            <!-- End Item -->
                         </div>
-                        <!-- End Carousel Inner -->
-                        <ul class="list-group col-sm-4">
-                            <li data-target="#myCarousel" data-slide-to="0" class="list-group-item active">
-                                <h4>শিশুরা শিউলি ফুল কুড়াচ্ছে।</h4>
-                            </li>
-                            <li data-target="#myCarousel" data-slide-to="1" class="list-group-item">
-                                <h4>৪৯ তম নিবেলহর্ন ট্রফি ফিগার স্কেটি প্রতিযোগিতায় ..</h4>
-                            </li>
-                            <li data-target="#myCarousel" data-slide-to="2" class="list-group-item">
-                                <h4>স্বস্তির আশায় ঘর থেকে ...</h4>
-                            </li>
-                            <li data-target="#myCarousel" data-slide-to="3" class="list-group-item">
-                                <h4>বিদ্যুতের মূল্যবৃদ্ধির প্রস্তাবের বিরোধিতা করে সোমবার </h4>
-                            </li>
-                            <li data-target="#myCarousel" data-slide-to="4" class="list-group-item">
-                                <h4>দলবেঁধে সমুদ্রে সাম্পান নামাচ্ছেন জেলেরা।</h4>
-                            </li>
-                        </ul>
-                        <!-- Controls -->
-                        <div class="carousel-controls">
-                            <a class="left carousel-control" href="#myCarousel" data-slide="prev"> <span
-                                    class="glyphicon glyphicon-chevron-left"></span> </a>
-                            <a class="right carousel-control" href="#myCarousel" data-slide="next"> <span
-                                    class="glyphicon glyphicon-chevron-right"></span> </a>
-                        </div>
+                        {% endfor %}                        
                     </div>
                 </div>
                 <!-- End Carousel -->
                 <div class="col-md-4">
-                    <div class="picture-part-hedaing"> <a href="#">
-                            <h3>সবচেয়ে</h3>
-                        </a> </div>
-                    <div class="container newstab748">
-                        <ul class="tabs">
-                            <li class="tab-link current" data-tab="tab-1">শেষ</li>
-                            <li class="tab-link" data-tab="tab-2">পঠিত</li>
-                            <li class="tab-link" data-tab="tab-3">আলোচিত</li>
-                            <li class="tab-link" data-tab="tab-4">নির্বাচিত</li>
-                        </ul>
-                        <div id="tab-1" class="tab-content current">
-                            <a href="#">
-                                <p>বার্সেলোনার ‘ভুল’ থেকে শিক্ষা নিলো রিয়াল</p>
-                            </a>
-                            <hr>
-                            <a href="#">
-                                <p>ঢাকায় তাজিয়া মিছিল অনুষ্ঠিত</p>
-                            </a>
-                            <hr>
-                            <a href="#">
-                                <p>মাছ ধরার সময় বিলে নিখোঁজ তিন জেলে</p>
-                            </a>
-                            <hr>
-                            <a href="#">
-                                <p>সংগীতের পিনাক</p>
-                            </a>
-                        </div>
-                        <div id="tab-2" class="tab-content">
-                            <a href="#">
-                                <p>‘মিস ওয়ার্ল্ড বাংলাদেশ’ নিয়ে মুখ খুললেন উপস্থাপকও</p>
-                            </a>
-                            <hr>
-                            <a href="#">
-                                <p>আটলান্টিকের ওপরে বিপদে উড়োজাহাজ</p>
-                            </a>
-                            <hr>
-                            <a href="#">
-                                <p>দুই সুখবর দিয়ে দিন শেষ বাংলাদেশেরে</p>
-                            </a>
-                            <hr>
-                            <a href="#">
-                                <p>শেখ হাসিনা প্রাচ্যের নতুন তারকা</p>
-                            </a>
-                        </div>
-                        <div id="tab-3" class="tab-content">
-                            <a href="#">
-                                <p>শেখ হাসিনা প্রাচ্যের নতুন তারকা’<span class="comment9238"><i
-                                            class="fa fa-comment" aria-hidden="true"> ৮৩</i></span></p>
-                            </a>
-                            <hr>
-                            <a href="#">
-                                <p>ভিনদেশি জেলে ঠেকাবে কে?<span class="comment9238"><i class="fa fa-comment"
-                                            aria-hidden="true"> ২৬</i></span></p>
-                            </a>
-                            <hr>
-                            <a href="#">
-                                <p>সরকারকে শক্ত ভাষায় কথা বলতে বলল বিএনপি<span class="comment9238"><i
-                                            class="fa fa-comment" aria-hidden="true"> ১৬</i></span></p>
-                            </a>
-                            <hr>
-                            <a href="#">
-                                <p>‘মিস ওয়ার্ল্ড বাংলাদেশ’ নিয়ে মুখ খুললেন উপস্থাপকও<span class="comment9238"><i
-                                            class="fa fa-comment" aria-hidden="true"> ১৫</i></span></p>
-                            </a>
-                        </div>
-                        <div id="tab-4" class="tab-content">
-                            <a href="#">
-                                <p>ক্রিকেট প্রশাসন কোন পথে, প্রশ্ন সাবেরের</p>
-                            </a>
-                            <hr>
-                            <a href="#">
-                                <p>কাতালোনিয়ায় গণভোটে বাধা, আহত তিন শতাধিক</p>
-                            </a>
-                            <hr>
-                            <a href="#">
-                                <p>সরকারকে শক্ত ভাষায় কথা বলতে বলল বিএনপি</p>
-                            </a>
-                            <hr>
-                            <a href="#">
-                                <p>অস্ট্রেলিয়াকে পাত্তাই দিল না ভারত</p>
-                            </a>
-                        </div>
-                    </div>
-                    <!-- container -->
+                    {% include 'includes/dynamic_tabs.html' %}
                 </div>
             </div>
         </div>
@@ -401,82 +152,6 @@
 
 <!--#####################
 -----------part THREEE END--------------
-#####################-->
-
-<!--#####################
------------part FOUR START--------------
-#####################-->
-<section class="single-image-album28273">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8">
-                <div class="picture-part-hedaing"> <a href="#">
-                        <h3> ছবি</h3>
-                    </a> </div>
-                <div class="imagec-content8293">
-                    <div class="col-md-3">
-                        <div class="single-cinten-detail24">
-                            <a href="#"><img src="{% static 'img/khela1.jpg' %}" alt="Image"></a>
-                            <div class="singla-image-info290">
-                                <a href="#">
-                                    <p>টাইম মেশিনে চড়ে বসেছিল বাংলাদেশ</p>
-                                </a>
-                                <h6>খেলা</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="single-cinten-detail24">
-                            <a href="#"><img src="{% static 'img/item2.jpeg' %}" alt="Image"></a>
-                            <div class="singla-image-info290">
-                                <a href="#">
-                                    <p>চীন হবে বাংলাদেশে এক নম্বর বিনিয়োগকারী দেশ</p>
-                                    <h6>আন্তর্জাতিক </h6>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="single-cinten-detail24">
-                            <a href="#"><img src="{% static 'img/item4.jpg' %}" alt="Image"></a>
-                            <div class="singla-image-info290">
-                                <a href="#">
-                                    <p>শেখ হাসিনা শুধু শাসক নন, মানবতার নেত্রী</p>
-                                    <h6>বাংলাদেশ</h6>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="single-cinten-detail24">
-                            <a href="#"><img src="{% static 'img/item5.jpg' %}" alt="Image"></a>
-                            <div class="singla-image-info290">
-                                <a href="#">
-                                    <p>অস্ট্রেলিয়াকে পাত্তাই দিল না ভারত</p>
-                                    <h6>খেলা</h6>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="ads-part812">
-                    <a href="#"><img src="{% static 'img/eb60cc3f3b4e1be0fcbedc7dbb7c5df5-58b5632e5181c.jpg' %}"
-                            alt="Image"></a>
-
-                </div>
-
-
-            </div>
-
-
-
-        </div>
-    </div>
-</section>
-<!--#####################
------------part FOUR END--------------
 #####################-->
 
 <!--#####################
@@ -561,7 +236,7 @@
             </div>
             <div class="col-md-4">
                 <div class="ads-part727829">
-                    <a href="#"><img src="{% static 'img/16353491202703811251.gif' %}" alt="Image"></a>
+                    <a href="javascript:void(0)"><img src="{% static 'img/16353491202703811251.gif' %}" alt="Image"></a>
                 </div>
             </div>
         </div>

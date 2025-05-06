@@ -1,0 +1,155 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load bangla_date %}
+
+{% block content %}
+
+<main class="cd-main-content">
+    <div class="container">
+        <div class="ads-details">
+
+        </div>
+    </div>
+</main>
+
+
+
+<!--#####################
+-----------part THREE--------------
+#####################-->
+<section class="picture_part28930">
+    <div class="container">
+        <div class="row">
+            <div class="single-image-gallery829">
+                <div class="col-md-8">
+                    <div class="picture-part-hedaing"> 
+                        <a href="{{ single_news.category.get_url }}" style="font-size: 1.75rem; font-weight: bold; color: #0573e6; text-decoration: underline; margin-bottom: 15px;"><h4>{{single_news.category}}</h4></a>
+    
+                        <br>
+                        <a href="#">
+                            <h3> {{single_news.news_title}}</h3>
+                        </a>
+                        <p style="color: #464141ad;">প্রকাশ: {{ single_news.created_at|bangla_datetime }}</p>
+                        <hr style="padding: 0.3px; background-color: #c0b6b6ad; margin: 10px 0px 20px 0;">
+                    </div>
+                    <div>
+                        <div style="width: 100%; height: 42rem;">
+                            <img src="{{ single_news.images.url }}" style="width: 100%; height: 100%;" alt="image">
+                        </div>
+                        <div>
+                            <p style="padding-top: 2rem; font-size: 1.5rem; line-height: 2.5rem; letter-spacing: 0.1rem;">{{ single_news.long_description }}</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Carousel -->
+                <div class="col-md-4">
+                    {% include '../includes/dynamic_tabs.html' %}
+                    <!-- container -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--#####################
+-----------part THREEE END--------------
+#####################-->
+
+<!-- <section class="picturedemo2939">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="picture-part-hedaing">
+                    <h3><a href="#"> {{ single_news.category }} থেকে আরও পড়ুন</h3> </a>
+                </div>
+                <div class="carousel slide " data-ride="carousel" data-type="multi" data-interval="2000"
+                    id="myCarousel myCarousel843u89">
+                    <div class="carousel-inner acrouesel-inner29">
+                        <div class="item active item2">
+                            <div class="col-md-2">
+                                <div class="home-post-volume72378">
+                                    <a href="{{ single_news.get_url }}"><img src="{{ single_news.thumbnail.url }}" alt="image"></a>
+                                    <div class="home-post-details"> <a href="#">
+                                            <h2 class="line-clamp-2">{{ single_news.news_title }}</h2>
+                                        </a>
+    
+                                        <a href="#">
+                                            <p class="line-clamp-4">{{ single_news.short_description }}....</p>
+                                        </a> 
+    
+                                        <a href="#">
+                                            <h6> 
+                                                {% if category_name %} {{ single_news.created_at|bangla_date }} {% else %} {{ single_news.category }} {% endif %}
+                                                
+                                            </h6>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                       
+                        <div class="item">
+                            <div class="col-md-2 item2">
+                                <a href="#"><img src="{% static 'img/item2.jpeg' %}" class="img-responsive"></a>
+                                <a href="#">
+                                    <p>চীন হবে বাংলাদেশে এক নম্বর বিনিয়োগকারী দেশ</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="col-md-2 item2">
+                                <a href="#"><img src="{% static 'img/item3.jpg' %}" class="img-responsive"></a>
+                                <a href="#">
+                                    <p>ক্রিকেট প্রশাসন কোন পথে, প্রশ্ন সাবেরের</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="col-md-2  item2">
+                                <a href="#"><img src="{% static 'img/item4.jpg' %}" class="img-responsive"></a>
+                                <a href="#">
+                                    <p>শেখ হাসিনা শুধু শাসক নন, মানবতার নেত্রী</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="col-md-2  item2">
+                                <a href="#"><img src="{% static 'img/item5.jpg' %}" class="img-responsive"></a>
+                                <a href="#">
+                                    <p>অস্ট্রেলিয়াকে পাত্তাই দিল না ভারত</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="col-md-2 col-sm-6 col-xs-12 item2">
+                                <a href="#"><img src="{% static 'img/item6.jpg' %}" class="img-responsive"></a>
+                                <a href="#">
+                                    <p> জাতির কাছে ক্ষমা চাইলেন মুশফিক</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="col-md-2  item2">
+                                <a href="#"><img src="{% static 'img/item2.jpeg' %}" class="img-responsive"></a>
+                                <a href="#">
+                                    <p> ‘রোহিঙ্গা ইস্যুতে যৌথ ওয়ার্কিং গ্রুপ অনিশ্চিত প্রক্রিয়া’</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="col-md-2  item2">
+                                <a href="#"><img src="{% static 'img/item7.jpg' %}" class="img-responsive"></a>
+                                <a href="#">
+                                    <p>মরকেল থাকছেন না বাংলাদেশ–সিরিজে</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </div>
+</section> -->
+
+{% endblock %}
